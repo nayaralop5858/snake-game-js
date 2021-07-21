@@ -5,6 +5,10 @@
 <h2 align="center">Nayara Lopes </h2>
 
 <h2 id="pontuacao"></h2>
+<h2 id="Dificuldade">
+    <button onclick="mudarDificuldade(0)">Facil</button>
+    <button onclick="mudarDificuldade(1)">Medio</button>
+    <button onclick="mudarDificuldade(3)">Dificil</button></h2>
 <div id="principal">
 </div>
 <div id="opcoes" align="center">
@@ -13,6 +17,7 @@
 <script>
     var textPontos = document.getElementById("pontuacao");
     var pontos = 0;
+    var dificuldadeJogo = 300
     function inicarJogo(){
         tabuleiro="<table align=center border=1>";
         for(x=0;x<10;x++){
@@ -51,11 +56,8 @@
         if(cobra[0][0]<0||cobra[0][1]<0||cobra[0][0]>9||cobra[0][1]>9)vivo=false;
         document.getElementById('td'+cobra[0][0]+'_'+cobra[0][1]).style.background="#333333";
         document.getElementById('td'+mx+'_'+my).style.background="#ff3333";
-        if(vivo)setTimeout('anda()',300);
+        if(vivo)setTimeout('anda()',dificuldadeJogo);
         else alert('Fim de jogo');
-    }
-    function reinciar(){
-        inicarJogo();
     }
     anda();
     function pegadirecao(tecla){
@@ -64,6 +66,17 @@
         if(tecla==38)direcao=1;
         if(tecla==39)direcao=2;
         if(tecla==40)direcao=3;
+    }
+    function reinciar(){
+        inicarJogo();
+    }
+    function mudarDificuldade(dificuldade){
+        if(dificuldade == 0)
+            dificuldadeJogo = 300
+        else if(dificuldade == 1)
+            dificuldadeJogo = 200
+        else
+            dificuldadeJogo = 100
     }
 </script>
 </body>
