@@ -33,6 +33,7 @@
         mx=parseInt(Math.random()*10);
         my=parseInt(Math.random()*10);
         vivo=true;
+        anda();
     }
     inicarJogo();
     function anda(){
@@ -59,7 +60,6 @@
         if(vivo)setTimeout('anda()',dificuldadeJogo);
         else alert('Fim de jogo');
     }
-    anda();
     function pegadirecao(tecla){
         /*alert(tecla);*/
         if(tecla==37)direcao=0;
