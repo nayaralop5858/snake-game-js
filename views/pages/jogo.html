@@ -20,7 +20,7 @@
     var pontos = 0;
     function inicarJogo(){
         pontos = 0;
-        textPontos.textContent = "Pontos: " + pontos
+        textPontos.textContent = "Pontos: " + pontos;
         tabuleiro="<table align=center border=1>";
         for(x=0;x<10;x++){
             tabuleiro+="<tr>";
@@ -29,7 +29,7 @@
             tabuleiro+="</tr>";
         }
         document.getElementById('principal').innerHTML=tabuleiro+"</table>";
-        textPontos.textContent = "Pontos: " + pontos
+        textPontos.textContent = "Pontos: " + pontos;
         cobra=[[5,0]];
         direcao=2;
         mx=parseInt(Math.random()*10);
@@ -45,7 +45,7 @@
             my=parseInt(Math.random()*10);
             cobra[cobra.length]=[10,10];
             pontos += 10;
-            textPontos.textContent = "Pontos: " + pontos
+            textPontos.textContent = "Pontos: " + pontos;
         }
         for(x=cobra.length-1;x>0;x--){
             cobra[x][0]=cobra[x-1][0];
